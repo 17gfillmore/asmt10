@@ -1,0 +1,21 @@
+﻿@model IEnumerable<RecipeClasses>
+@*we don't need to reference the model more specifically because it is set up in the file structure
+the data coming from the view component will be a list of strings, so that's all we need to say*@
+
+<a asp-action="Index" asp-controller="Home" asp-route-mealtypeid="">Home</a>
+<br />
+
+@foreach(var x in Model)
+{
+    <a asp-action="Index" asp-controller="Home"
+       asp-route-mealtypeid="@x.RecipeClassId"
+       asp-route-mealtype="@x.RecipeClassDescription">
+       @x.RecipeClassDescription
+    </a>
+    <br />
+}
+
+
+<div set-up-correctly="true">
+    page
+</div>
